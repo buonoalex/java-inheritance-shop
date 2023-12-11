@@ -66,4 +66,17 @@ public class Prodotto {
         this.iva = iva;
     }
 
+    //Stampa
+
+
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "codice=" + codice +
+                ", nome='" + nome + '\'' +
+                ", descrizine='" + descrizine + '\'' +
+                ", prezzo=" + prezzo +
+                ", iva=" + iva +
+                '}';
+    }
 }

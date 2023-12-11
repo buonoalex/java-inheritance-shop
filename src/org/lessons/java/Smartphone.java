@@ -19,6 +19,13 @@ public class Smartphone extends Prodotto {
     }
 
     //Stampa
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "smartMemory=" + smartMemory +
+                ", imei=" + imei +
+                '}';
+    }
 
     //Getter and Setter
     public int getSmartMemory() {

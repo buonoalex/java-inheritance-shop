@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0df973c-c6f9-407c-b29e-f3514a9cb02a" name="Changes" comment="Start Project">
-      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/Smartphone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/Televisori.java" afterDir="false" />
+    <list default="true" id="c0df973c-c6f9-407c-b29e-f3514a9cb02a" name="Changes" comment="Add special products">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/Carrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/Carrello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/Cuffia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/Cuffia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/Prodotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/Prodotto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/Smartphone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/Smartphone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/Televisori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/Televisore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Carrello.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -66,11 +70,20 @@
       <option name="project" value="LOCAL" />
       <updated>1702306300748</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add special products">
+      <option name="closed" value="true" />
+      <created>1702308431078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702308431078</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start Project" />
+    <MESSAGE value="Add special products" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add special products" />
   </component>
 </project>
