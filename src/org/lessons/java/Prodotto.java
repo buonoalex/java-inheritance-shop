@@ -39,8 +39,8 @@ public class Prodotto {
         return iva;
     }
 
-    public void setIva(BigDecimal iva) {
-        this.iva = iva;
+    private BigDecimal setIva() {
+        return BigDecimal.valueOf(21);
     }
 
     public int getCodice() {
@@ -58,25 +58,53 @@ public class Prodotto {
 
     }
 
-    public Prodotto(String nome, String descrizine, BigDecimal prezzo, BigDecimal iva) {
+    public Prodotto(String nome, String descrizine, BigDecimal prezzo) {
         this.codice = setCodice();
         this.nome = nome;
         this.descrizine = descrizine;
         this.prezzo = prezzo;
-        this.iva = iva;
+        this.iva = setIva();
     }
 
     //Stampa
 
 
-    @Override
-    public String toString() {
-        return "Prodotto{" +
-                "codice=" + codice +
-                ", nome='" + nome + '\'' +
-                ", descrizine='" + descrizine + '\'' +
-                ", prezzo=" + prezzo +
-                ", iva=" + iva +
-                '}';
+    public String toStringExtra(boolean extra) {
+        if (extra){
+
+            return "Prodotto \n" +
+                    "codice = " + codice + "\n"+
+                    "nome = " + nome + "\n" +
+                    "descrizine = " + descrizine + "\n" +
+                    "prezzo = " + prezzo + "€" + "\n" +
+                    "iva = " + PrezzoConIva() +"€"+ "\n"+
+                    "PrezzoFedeltà = "+ DiscountPrice2() + "€" +"\n"+
+                    "-----------";
+
+        }else {
+
+            return "Prodotto \n" +
+                    "codice = " + codice + "\n"+
+                    "nome = " + nome + "\n" +
+                    "descrizine = " + descrizine + "\n" +
+                    "prezzo = " + prezzo + "€" + "\n" +
+                    "iva = " + PrezzoConIva() +"€"+ "\n"+
+                    "-----------";
+        }
+
+    }
+
+    public BigDecimal PrezzoConIva(){
+        BigDecimal c = prezzo.multiply(iva);
+        BigDecimal c1 = c.divide(BigDecimal.valueOf(100));
+        BigDecimal c2 = prezzo.add(c1);
+        return c2;
+    }
+
+    public BigDecimal DiscountPrice2 (){
+        BigDecimal b = prezzo.multiply(BigDecimal.valueOf(2));
+        BigDecimal b1 = b.divide(BigDecimal.valueOf(100));
+        BigDecimal b2 = prezzo.subtract(b1);
+        return b2;
     }
 }

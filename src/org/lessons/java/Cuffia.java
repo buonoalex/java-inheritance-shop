@@ -11,8 +11,8 @@ public class Cuffia extends Prodotto{
 
     }
 
-    public Cuffia(String nome, String descrizine, BigDecimal prezzo, BigDecimal iva, String colore, String supportType) {
-        super(nome, descrizine, prezzo, iva);
+    public Cuffia(String nome, String descrizine, BigDecimal prezzo, String colore, String supportType) {
+        super(nome, descrizine, prezzo);
         this.colore = colore;
         this.supportType = supportType;
     }

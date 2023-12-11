@@ -12,8 +12,8 @@ public class Smartphone extends Prodotto {
 
     }
 
-    public Smartphone(String nome, String descrizine, BigDecimal prezzo, BigDecimal iva, int smartMemory) {
-        super(nome, descrizine, prezzo, iva);
+    public Smartphone(String nome, String descrizine, BigDecimal prezzo, int smartMemory) {
+        super(nome, descrizine, prezzo);
         this.imei = setImei();
         this.smartMemory = smartMemory;
     }

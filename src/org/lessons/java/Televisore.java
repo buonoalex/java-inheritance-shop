@@ -11,8 +11,8 @@ public class Televisore extends Prodotto{
 
     }
 
-    public Televisore(String nome, String descrizine, BigDecimal prezzo, BigDecimal iva, String support, int pollici) {
-        super(nome, descrizine, prezzo, iva);
+    public Televisore(String nome, String descrizine, BigDecimal prezzo, String support, int pollici) {
+        super(nome, descrizine, prezzo);
         this.support = support;
         this.pollici = pollici;
     }

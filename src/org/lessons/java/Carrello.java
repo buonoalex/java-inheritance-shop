@@ -17,15 +17,23 @@ public class Carrello {
 
 
         boolean sentinella = false;
+        boolean fedelta = false;
 
         while (!sentinella){
+
             System.out.println("Vuoi inserire un prodotto al carrello (y/n) : ");
             String choiceAdd = myBroScan.nextLine();
 
-            System.out.println("Hai la carta fedeltà del nostro shop (y/n) : ");
-            String choiceCard = myBroScan.nextLine();
             switch (choiceAdd){
                 case "y":
+
+                    //Input Sconto
+                    System.out.println("Hai la carta fedeltà del nostro shop (y/n) : ");
+                    String choiceCard = myBroScan.nextLine();
+                    if (choiceCard.equals("y")){
+                        fedelta = true;
+                    }
+
                     //Input Prodotto
                     System.out.println("Inserisci il nome del prodotto : ");
                     String nameProduct = myBroScan.nextLine();
@@ -35,20 +43,16 @@ public class Carrello {
                     String tempPrice = myBroScan.nextLine();
                     BigDecimal priceProduct = new BigDecimal(tempPrice);
 
-                    System.out.println("Inserisci l'Iva del prodotto(percento) ");
-                    String tempPrice2 = myBroScan.nextLine();
-                    BigDecimal ivaProduct = new BigDecimal(tempPrice2);
-
                     //Input Extra
                     System.out.println("Che tipo di prodotto vuoi inserire nel tuo carrello (Smartphone/Cuffia/Televisore/Altro) : ");
-                    String choiceType = myBroScan.nextLine();
+                    String choiceType = myBroScan.nextLine().toLowerCase();
 
 
                     switch (choiceType){
                         case "smartphone":
                             System.out.println("Di quanta memoria hai bisogno : ");
                             int userMemory = Integer.parseInt(myBroScan.nextLine());
-                            myShop.add(new Smartphone(nameProduct,descriptionProduct,priceProduct,ivaProduct,userMemory));
+                            myShop.add(new Smartphone(nameProduct,descriptionProduct,priceProduct,userMemory));
                             break;
 
                         case "cuffia":
@@ -56,7 +60,7 @@ public class Carrello {
                             String colorPods = myBroScan.nextLine();
                             System.out.println("Di che tipo supportano (Wirless/Cable) : ");
                             String typePods = myBroScan.nextLine();
-                            myShop.add(new Cuffia(nameProduct,descriptionProduct,priceProduct,ivaProduct,colorPods,typePods));
+                            myShop.add(new Cuffia(nameProduct,descriptionProduct,priceProduct,colorPods,typePods));
                             break;
 
                         case "televisore":
@@ -64,27 +68,27 @@ public class Carrello {
                             int polliciTv =  Integer.parseInt(myBroScan.nextLine());
                             System.out.println("Che tipo vuoi (Smart/no) : ");
                             String typeTv = myBroScan.nextLine();
-                            myShop.add(new Televisore(nameProduct,descriptionProduct,priceProduct,ivaProduct,typeTv,polliciTv));
+                            myShop.add(new Televisore(nameProduct,descriptionProduct,priceProduct,typeTv,polliciTv));
                             break;
 
                         default:
-                            myShop.add(new Prodotto(nameProduct,descriptionProduct,priceProduct,ivaProduct));
+                            myShop.add(new Prodotto(nameProduct,descriptionProduct,priceProduct));
                             break;
-                    }
-
-                    //Stampa Carrello
-                    for (Prodotto element : myShop){
-                        String printElement = element.toString();
-                        System.out.println(printElement);
                     }
                     break;
 
                 case "n":
-                    System.out.println("Arrivederci");
+                    System.out.println("Arrivederci\n");
                     sentinella = true;
                     break;
             }
 
+        }
+
+        //Stampa Carrello
+        for (Prodotto element : myShop){
+            String printElement = element.toStringExtra(fedelta);
+            System.out.println(printElement);
         }
 
         //Chiudo Scan
